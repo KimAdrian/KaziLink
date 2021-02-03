@@ -28,6 +28,7 @@ public class Login extends AppCompatActivity {
         emailEditText = findViewById(R.id.editTextTextPersonName);
         passwordEditText = findViewById(R.id.editTextTextPassword);
         progressBar = findViewById(R.id.progress_bar_login);
+        progressBar.setVisibility(View.GONE);
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -70,6 +71,7 @@ public class Login extends AppCompatActivity {
                     //Was successful so redirect the user to the Home Work link page.
                     Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(Login.this, WorkLinkHome.class));
+                    //finish();
                 }
                 else{
                     Toast.makeText(Login.this, "Failed to login, Check your details", Toast.LENGTH_LONG).show();
