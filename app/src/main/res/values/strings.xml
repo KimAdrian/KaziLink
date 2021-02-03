@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">KaziLink</string>
+    <string-array name="spinner_array">
+        <item>Electrician</item>
+        <item>Plumber</item>
+        <item>Mechanic</item>
+        <item>Cleaner</item>
+        <item>Driver</item>
+        <item>Carpenter</item>
+    </string-array>
 </resources>

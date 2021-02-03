@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "842629783156",
+    "project_id": "work-link-6b4f1",
+    "storage_bucket": "work-link-6b4f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842629783156:android:60fef50439672536363b21",
+        "android_client_info": {
+          "package_name": "com.kimadrian.kazilink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842629783156-vlqo4mq1jub6n8936ib40jm4dh7ek35u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kimadrian.kazilink",
+            "certificate_hash": "791b1f6efac7594e77792086bc3d6af559970c23"
+          }
+        },
+        {
+          "client_id": "842629783156-0ik9ig3q5994jge2j9g2bnsvvoqb1dfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNWlHrLWeYw3nkBt_o8KLaYmdMd3_V4nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842629783156-0ik9ig3q5994jge2j9g2bnsvvoqb1dfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

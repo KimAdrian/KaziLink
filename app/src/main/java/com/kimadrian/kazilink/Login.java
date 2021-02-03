@@ -18,4 +18,9 @@ public class Login extends AppCompatActivity {
         Intent goToSignUpPage = new Intent(this, SignUp.class);
         startActivity(goToSignUpPage);
     }
+
+    public void goToMainPage(View view){
+        Intent goToMainPage = new Intent(this, WorkLinkHome.class);
+        startActivity(goToMainPage);
+    }
 }

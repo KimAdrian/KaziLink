@@ -18,148 +18,94 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="72dp"
-        android:text="Username"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="213dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="Username"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textViewEmail"
-        android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="128dp"
-        android:text="e-mail"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewPhone"
-        android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="192dp"
-        android:text="Phone"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:layout_editor_absoluteX="157dp" />
 
     <EditText
         android:id="@+id/editTextProfession"
-        android:layout_width="213dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="204dp"
         android:ems="10"
+        android:hint="Profession"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textViewProfession"
-        android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="260dp"
-        android:text="Profession"
-        android:textSize="27sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:layout_editor_absoluteX="157dp" />
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="211dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:hint="Phone Number"
         android:inputType="phone"
-        app:layout_constraintStart_toEndOf="@+id/textViewPhone"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        tools:layout_editor_absoluteX="157dp" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="211dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        app:layout_constraintStart_toEndOf="@+id/textViewEmail"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
-
-    <TextView
-        android:id="@+id/textViewPassword"
-        android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="328dp"
-        android:text="Password"
-        android:textSize="27sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewConfirmPassword"
-        android:layout_width="138dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="388dp"
-        android:text="Confirm\nPassword"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        tools:layout_editor_absoluteX="157dp" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
-        android:layout_width="213dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintStart_toEndOf="@+id/textViewPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextProfession" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextProfession"
+        tools:layout_editor_absoluteX="157dp" />
 
     <EditText
         android:id="@+id/editTextTextPassword3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
         android:ems="10"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
-        app:layout_constraintStart_toEndOf="@+id/textViewConfirmPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+        tools:layout_editor_absoluteX="154dp" />
 
     <Button
-        android:id="@+id/submit_signup_details"
+        android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
         android:layout_marginTop="56dp"
+        android:onClick="submitButtonClicked"
         android:text="submit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+
+    <ProgressBar
+        android:id="@+id/myProgresssBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="588dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
