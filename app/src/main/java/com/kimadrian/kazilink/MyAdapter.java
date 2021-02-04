@@ -1,10 +1,13 @@
 package com.kimadrian.kazilink;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +38,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.emailTextView.setText(user.getEmail());
         holder.professionTextView.setText(user.getProfession());
         holder.phoneNumberTextView.setText(user.getPhoneNumber());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Calling : " + holder.userNameTextView.getText().toString(), Toast.LENGTH_LONG ).show();
+                Intent callPerson = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + holder.phoneNumberTextView.getText().toString()));
+                context.startActivity(callPerson);
+            }
+        });
     }
 
     @Override
