@@ -26,11 +26,11 @@
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         tools:layout_editor_absoluteX="157dp" />
 
@@ -38,23 +38,23 @@
         android:id="@+id/editTextProfession"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Profession"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
         tools:layout_editor_absoluteX="157dp" />
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="phone"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
         tools:layout_editor_absoluteX="157dp" />
 
@@ -62,11 +62,11 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
         tools:layout_editor_absoluteX="157dp" />
 
@@ -74,11 +74,11 @@
         android:id="@+id/editTextTextPassword2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/editTextProfession"
         tools:layout_editor_absoluteX="157dp" />
 
@@ -86,11 +86,11 @@
         android:id="@+id/editTextTextPassword3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -98,25 +98,23 @@
         android:id="@+id/editTextDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Write a brief description of yourself."
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/submit_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="99dp"
         android:onClick="submitButtonClicked"
         android:text="Sign Up"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonUploadProfilePic" />
 
@@ -135,15 +133,12 @@
         android:id="@+id/buttonUploadProfilePic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/white"
-        android:layout_marginTop="76dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
         android:onClick="uploadProfilePicture"
         android:text="Upload Profile Picture"
-        app:layout_constraintBottom_toTopOf="@+id/submit_button"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
