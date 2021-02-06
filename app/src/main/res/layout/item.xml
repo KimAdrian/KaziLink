@@ -11,21 +11,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/material_background_hd"
+        android:background="@drawable/cool_background"
         android:orientation="vertical">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:src="@drawable/green_bulb"
+                android:id="@+id/image_view_user_profile"
+                android:src="@drawable/she_profile_icon"
                 android:layout_width="150dp"
                 android:layout_height="150dp"/>
             <TextView
+                android:id="@+id/textViewDisplayUserDescription"
                 android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
                 android:text="BRIEF DESCRIPTION:\n This is where you are supposed to write your description. Just describe yourself. Write the skills that you have to offer to the client. All the abilities that you have in hand and your qualifications, state them here."
-                android:textStyle="bold"
-                android:textColor="@android:color/holo_blue_bright"
+                android:textStyle="italic|bold"
+                android:textColor="#4FFF06"
                 android:layout_height="wrap_content"/>
 
 
@@ -51,7 +54,7 @@
                 android:text="display Name"
                 android:textColor="#B7ED18"
                 android:layout_marginStart="20dp"
-                android:textStyle="normal"
+                android:textStyle="bold"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -76,7 +79,7 @@
                 android:text="display profession"
                 android:textColor="#B7ED18"
                 android:layout_marginStart="20dp"
-                android:textStyle="normal"
+                android:textStyle="bold"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -101,7 +104,7 @@
                 android:text="display Phone No"
                 android:textColor="#B7ED18"
                 android:layout_marginStart="20dp"
-                android:textStyle="normal"
+                android:textStyle="bold"
                 android:textSize="20sp"/>
 
         </LinearLayout>

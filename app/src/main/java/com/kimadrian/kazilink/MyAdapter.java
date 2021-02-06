@@ -6,11 +6,14 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -38,6 +41,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.emailTextView.setText(user.getEmail());
         holder.professionTextView.setText(user.getProfession());
         holder.phoneNumberTextView.setText(user.getPhoneNumber());
+        holder.userDescriptionTextView.setText( "DESCRIPTION : \n\n" + user.getUserDescription());
+        Glide.with(this.context)
+                .load(user.getImageUrl())
+                .into(holder.userProfileImageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +63,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView userNameTextView, emailTextView, phoneNumberTextView, professionTextView;
+        TextView userNameTextView, emailTextView, phoneNumberTextView, professionTextView, userDescriptionTextView;
+        ImageView userProfileImageView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -64,6 +72,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             emailTextView = itemView.findViewById(R.id.textViewDisplayEmail);
             phoneNumberTextView = itemView.findViewById(R.id.textViewDisplayPhoneNumber);
             professionTextView = itemView.findViewById(R.id.textViewDisplayProfession);
+            userDescriptionTextView = itemView.findViewById(R.id.textViewDisplayUserDescription);
+            userProfileImageView = itemView.findViewById(R.id.image_view_user_profile);
         }
     }
 }

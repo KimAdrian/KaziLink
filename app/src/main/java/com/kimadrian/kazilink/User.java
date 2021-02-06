@@ -1,16 +1,18 @@
 package com.kimadrian.kazilink;
 
 public class User {
-    public String userName, email, phoneNumber, profession;
+    public String userName, email, phoneNumber, profession, userDescription, imageUrl;
 
     public User(){//A constructor if one wants to create a User Object without any parameters.
     }
     //A constructor that will receive be used to create a user with all the details as the parameters.
-    public User(String userName, String email, String phoneNumber, String profession){
+    public User(String userName, String email, String phoneNumber, String profession, String userDescription, String imageUrl){
         this.userName = userName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.profession = profession;
+        this.userDescription = userDescription;
+        this.imageUrl = imageUrl;
     }
 
     //Getters and setters for the instance variables.
@@ -46,5 +48,19 @@ public class User {
         this.profession = profession;
     }
 
+    public String getUserDescription() {
+        return userDescription;
+    }
 
+    public void setUserDescription(String userDescription) {
+        this.userDescription = userDescription;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }

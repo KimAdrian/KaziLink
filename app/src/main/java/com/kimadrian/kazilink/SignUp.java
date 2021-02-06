@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -34,11 +35,13 @@ public class SignUp extends AppCompatActivity {
     ProgressBar myProgressBar;
     private FirebaseAuth mAuth;
     private EditText userNameEditText, emailEditText, phoneNumberEditText, professionEditText,
-            passwordEditText, confirmPasswordEditText;
+            passwordEditText, confirmPasswordEditText, userDescriptionEditText;
     private Uri imageUri;
     public FirebaseStorage storage;
     public StorageReference storageReference;
+    public DatabaseReference root = FirebaseDatabase.getInstance().getReference("Image");
     public boolean hasUserUploadedPicture;
+    private String profilePicImageUrl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +54,7 @@ public class SignUp extends AppCompatActivity {
         professionEditText = findViewById(R.id.editTextProfession);
         passwordEditText = findViewById(R.id.editTextTextPassword2);
         confirmPasswordEditText = findViewById(R.id.editTextTextPassword3);
+        userDescriptionEditText = findViewById(R.id.editTextDescription);
 
         mAuth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
@@ -62,6 +66,7 @@ public class SignUp extends AppCompatActivity {
         String email = emailEditText.getText().toString().trim();
         String phoneNumber = phoneNumberEditText.getText().toString();
         String profession = professionEditText.getText().toString();
+        String userDescription = userDescriptionEditText.getText().toString();
         String password = passwordEditText.getText().toString();
         String confirmPassword = confirmPasswordEditText.getText().toString();
 
@@ -90,6 +95,11 @@ public class SignUp extends AppCompatActivity {
             professionEditText.requestFocus();
             return;
         }
+        if(userDescription.isEmpty()){
+            userDescriptionEditText.setError("A Brief description is Required.");
+            userDescriptionEditText.requestFocus();
+            return;
+        }
         if(password.isEmpty()){
             passwordEditText.setError("Input Password");
             passwordEditText.requestFocus();
@@ -113,18 +123,22 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(this, "Passwords do not Match!", Toast.LENGTH_SHORT).show();
             return;
         }
-        /*if(!hasUserUploadedPicture){
+        if(!hasUserUploadedPicture){
             Toast.makeText(this, "Please Upload a Profile Picture.", Toast.LENGTH_SHORT).show();
             return;
-        }*/
+        }
 
         myProgressBar.setVisibility(View.VISIBLE);
+        //This will get the currentuser ID.
+        //String userUID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        //String imageUrl = imageUri.toString();
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user = new User(userName, email, phoneNumber, profession);
+                            User user = new User(userName, email, phoneNumber, profession, userDescription, profilePicImageUrl );
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())//This returns the id for the registered user.
@@ -137,16 +151,17 @@ public class SignUp extends AppCompatActivity {
 
                                         //Redirect here to the login profile.
                                         startActivity(new Intent(SignUp.this, Login.class));
+                                        finish();
                                     }
                                     else{
-                                        Toast.makeText(SignUp.this, "Task 2 Not Successful Registration Failure", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SignUp.this, "Registration Failure : Check Connection", Toast.LENGTH_LONG).show();
                                         myProgressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }
                         else{
-                            Toast.makeText(SignUp.this, "Task 1 not successful Registration Failure", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignUp.this, "Registration Failure : Check Connection", Toast.LENGTH_LONG).show();
                             myProgressBar.setVisibility(View.GONE);
                         }
                     }
@@ -186,8 +201,18 @@ public class SignUp extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         progressDialog.dismiss();
-                        Snackbar.make(findViewById(android.R.id.content), "Profile Picture Uploaded" , Snackbar.LENGTH_LONG).show();
-                        //hasUserUploadedPicture = true;
+                        hasUserUploadedPicture = true;
+                        myStorageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+
+                                profilePicImageUrl = uri.toString();
+                                /*User user = new User(uri.toString());
+                                String userId = root.push().getKey();
+                                root.child(userId).setValue(user);*/
+                                Snackbar.make(findViewById(android.R.id.content), "Profile Picture Uploaded" , Snackbar.LENGTH_LONG).show();
+                            }
+                        });
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
